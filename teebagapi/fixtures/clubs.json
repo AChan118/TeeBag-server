@@ -1,0 +1,107 @@
+[
+    {
+        "model": "teebagapi.club",
+        "pk": 1,
+        "fields": {
+            "name": "4 Iron",
+            "image_url": "https://www.4iron.com/wp-content/uploads/2018/10/4iron-logo.png"
+        }
+        
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 2,
+        "fields": {
+            "name": "5 Iron",
+            "image_url": "https://www.thegolfclub.com/wp-content/uploads/2018/10/tgc-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 3,
+        "fields": {
+            "name": "6 Iron",
+            "image_url": "https://www.6iron.com/wp-content/uploads/2018/10/6iron-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 4,
+        "fields": {
+            "name": "7 Iron",
+            "image_url": "https://www.7iron.com/wp-content/uploads/2018/10/7iron-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 5,
+        "fields": {
+            "name": "8 Iron",
+            "image_url": "https://www.8iron.com/wp-content/uploads/2018/10/8iron-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 6,
+        "fields": {
+            "name": "9 Iron",
+            "image_url": "https://www.9iron.com/wp-content/uploads/2018/10/9iron-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 7,
+        "fields": {
+            "name": "Pitching Wedge",
+            "image_url": "https://www.pitchingwedge.com/wp-content/uploads/2018/10/pitchingwedge-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 8,
+        "fields": {
+            "name": "Sand Wedge",
+            "image_url": "https://www.sandwedge.com/wp-content/uploads/2018/10/sandwedge-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 9,
+        "fields": {
+            "name": "Lob Wedge",
+            "image_url": "https://www.lobwedge.com/wp-content/uploads/2018/10/lobwedge-logo.png"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 10,
+        "fields": {
+            "name": "Putter",
+            "image_url": "https://www.callawaygolfpreowned.com/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/default/v1670307176992/sits/putters-2021-wh-og-1-ch/putters-2021-wh-og-1-ch___1.png?sfrm=png&sw=500"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 11,
+        "fields": {
+            "name": "Driver",
+            "image_url": "https://www.callawaygolfpreowned.com/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/default/v1670307176992/sits/drivers-2021-wh-og-1-ch/drivers-2021-wh-og-1-ch___1.png?sfrm=png&sw=500"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 12,
+        "fields": {
+            "name": "3 Wood",
+            "image_url": "https://www.callawaygolfpreowned.com/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/default/v1670307176992/sits/woods-2021-wh-og-1-ch/woods-2021-wh-og-1-ch___1.png?sfrm=png&sw=500"
+        }
+    },
+    {
+        "model": "teebagapi.club",
+        "pk": 13,
+        "fields": {
+            "name": "5 Wood",
+            "image_url": "https://www.callawaygolfpreowned.com/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/default/v1670307176992/sits/woods-2021-wh-og-1-ch/woods-2021-wh-og-1-ch___1.png?sfrm=png&sw=500"
+        }
+    }
+]

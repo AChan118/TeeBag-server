@@ -1,0 +1,146 @@
+[
+    {
+        "model": "teebagapi.hole",
+        "pk": 1,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 2,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 3,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 4,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 5,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 6,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 7,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 8,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 9,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 10,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 11,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 12,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 13,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 14,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 15,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 16,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 17,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    },
+    {
+        "model": "teebagapi.hole",
+        "pk": 18,
+        "fields": {
+            "score": 4,
+            "round": 1
+        }
+    }
+]

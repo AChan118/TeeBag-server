@@ -1,0 +1,38 @@
+[
+    {
+        "model": "teebagapi.course",
+        "pk": 1,
+        "fields": {
+            "name": "Willow Ridge",
+            "city": "McEwen",
+            "state": "TN",
+            "front_nine_par": 36,
+            "back_nine_par": 35
+
+        }
+    },
+    {
+        "model": "teebagapi.course",
+        "pk": 2,
+        "fields": {
+            "name": "GreyStone",
+            "city": "Dickson",
+            "state": "TN",
+            "front_nine_par": 36,
+            "back_nine_par": 36
+
+        }
+    },
+    {
+        "model": "teebagapi.course",
+        "pk": 3,
+        "fields": {
+            "name": "Waverly Country Club",
+            "city": "Waverly",
+            "state": "TN",
+            "front_nine_par": 36,
+            "back_nine_par": 36
+
+        }
+    }
+]

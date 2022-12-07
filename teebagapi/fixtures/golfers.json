@@ -1,0 +1,11 @@
+[
+    {
+        "model": "teebagapi.golfer",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "I am the songbird of our generation",
+            "profile_image": 1
+        }
+    }
+]

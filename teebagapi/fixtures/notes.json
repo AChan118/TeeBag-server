@@ -1,0 +1,11 @@
+[
+    {
+        "model": "teebagapi.note",
+        "pk": 1,
+        "fields": {
+            "text": "First Note",
+            "date": "2022-12-1",
+            "golfer": 1
+        }
+    }
+]

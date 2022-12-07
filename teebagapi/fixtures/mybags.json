@@ -1,0 +1,9 @@
+[
+    {
+        "model": "teebagapi.mybag",
+        "pk": 1,
+        "fields": {
+            "golfer": 1
+        }
+    }
+]

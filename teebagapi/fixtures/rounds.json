@@ -1,0 +1,13 @@
+[
+    {
+        "model": "teebagapi.round",
+        "pk": 1,
+        "fields": {
+            "date": "2022-11-01",
+            "course": 1,
+            "golfer": 1,
+            "is_full_round": true
+
+        }
+    }
+]
