@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
-from teebagapi.views import register_user, login_user
+from rest_framework import routers
+from teebagapi.views import register_user, login_user, GolferView, CourseView
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'golfers', GolferView, 'golfer')
+router.register(r'courses', CourseView, 'course')
 
 urlpatterns = [
     path('register', register_user),
     path('login', login_user),
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 ]

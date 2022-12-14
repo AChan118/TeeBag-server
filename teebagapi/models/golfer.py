@@ -8,7 +8,7 @@ class Golfer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Additional address field to capture from the client
     bio = models.CharField(max_length=155)
-    profile_image = models.ForeignKey("ProfileImage", on_delete=models.CASCADE, null=True, blank=True)
+    profile_image_url = models.CharField(max_length=255)
 
     @property
     def full_name(self):

@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from teebagapi.models import Golfer
+from teebagapi.models import MyBag
 
 
 @api_view(['POST'])
@@ -56,12 +57,16 @@ def register_user(request):
         password=request.data['password'],
         first_name=request.data['first_name'],
         last_name=request.data['last_name'],
-        is_staff=1
+        is_staff=0
     )
     
     golfer = Golfer.objects.create(
         user=new_user,
         bio=request.data['bio']
+    )
+    
+    my_bag = MyBag.objects.create(
+        golfer=golfer
     )
 
     # Use the REST Framework's token generator on the new user account
@@ -69,3 +74,18 @@ def register_user(request):
     # Return the token to the client
     data = {'token': token.key, 'staff': new_user.is_staff}
     return Response(data)
+
+@api_view(['GET'])
+def current_user(request):
+    user = request.user
+    golfer = Golfer.objects.get(user=user)
+    return Response({
+      'username' : user.username,
+      'firstName' : user.first_name,
+      'lastName' : user.last_name,
+      'email' : user.email,
+      'isStaff' : user.is_staff,
+      'id' : golfer.id,
+      'bio' : golfer.bio,
+      'profileImageUrl' : golfer.profile_image_url,
+    })
