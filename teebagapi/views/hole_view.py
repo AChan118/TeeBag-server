@@ -3,6 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from teebagapi.models import Hole
+from teebagapi.models import Round
 
 class HoleView(ViewSet):
     """Golf Holes"""
@@ -14,6 +15,14 @@ class HoleView(ViewSet):
             Response -- JSON serialized list of holes
         """
         holes = Hole.objects.all()
+        
+        round = self.request.query_params.get('round', None)
+        if round is not None:
+            holes = holes.filter(round__id=round)
+            serializer = HoleSerializer(
+            holes, many=True, context={'request': request})
+            return Response(serializer.data)
+
 
         serializer = HoleSerializer(
             holes, many=True, context={'request': request})
@@ -36,9 +45,11 @@ class HoleView(ViewSet):
         Returns:
             Response -- JSON serialized Hole instance
         """
+        round = Round.objects.get(pk=request.data["round"])
+
         new_hole = Hole()
         new_hole.score = request.data["score"]
-        new_hole.round = request.data["round"]
+        new_hole.round = round
 
         new_hole.save()
 
@@ -52,9 +63,11 @@ class HoleView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
+        round = Round.objects.get(pk=request.data["round"])
+
         hole = Hole.objects.get(pk=pk)
         hole.score = request.data["score"]
-        hole.round = request.data["round"]
+        hole.round = round
         hole.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -70,4 +83,4 @@ class HoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hole
         fields = ('id', 'score', 'round')
-        depth = 1
+        depth = 2

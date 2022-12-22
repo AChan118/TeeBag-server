@@ -25,6 +25,7 @@ class GolferView(ViewSet):
                 'isActive' : user.is_active,
                 'bio' : golfer.bio,
                 'profileImageUrl' : golfer.profile_image_url,
+                'id' : golfer.id
             }
             return Response(data, status=status.HTTP_200_OK)
 
