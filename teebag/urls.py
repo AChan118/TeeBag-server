@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from teebagapi.views import register_user, login_user, GolferView, CourseView, NoteView, RoundView, HoleView, ClubView
+from teebagapi.views import register_user, login_user, GolferView, CourseView, NoteView, RoundView, HoleView, ClubView, MyClubView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'golfers', GolferView, 'golfer')
@@ -26,6 +26,7 @@ router.register(r'notes', NoteView, 'note')
 router.register(r'rounds', RoundView, 'round')
 router.register(r'holes', HoleView, 'hole')
 router.register(r'clubs', ClubView, 'club')
+router.register(r'myclubs', MyClubView, 'myclub')
 
 urlpatterns = [
     path('register', register_user),

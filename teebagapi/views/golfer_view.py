@@ -44,7 +44,6 @@ class GolferView(ViewSet):
 
         user.username = request.data["username"]
         user.email = request.data["email"]
-        user.is_active = request.data["isActive"]
         golfer.bio = request.data["bio"]
         golfer.profile_image_url = request.data["profileImageUrl"]
         user.save()

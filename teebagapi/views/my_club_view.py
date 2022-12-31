@@ -42,11 +42,11 @@ class MyClubView(ViewSet):
         club = Club.objects.get(pk=request.data["club"])
 
         new_myclub = MyClub()
-        brand = request.data["brand"]
-        yardage = request.data["yardage"]
-        loft = request.data["loft"]
-        club_notes = request.data["clubNotes"]
-        new_myclub.golfer = golfer
+        new_myclub.brand = request.data["brand"]
+        new_myclub.yardage = request.data["yardage"]
+        new_myclub.loft = request.data["loft"]
+        new_myclub.club_note = request.data["club_note"]
+        new_myclub.my_bag = golfer
         new_myclub.club = club
 
         new_myclub.save()
