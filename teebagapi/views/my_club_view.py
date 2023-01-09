@@ -5,6 +5,7 @@ from rest_framework import serializers, status
 from teebagapi.models import MyClub
 from teebagapi.models import Golfer
 from teebagapi.models import Club
+from teebagapi.models import MyBag
 
 class MyClubView(ViewSet):
     """Golf MyClubs"""
@@ -16,6 +17,8 @@ class MyClubView(ViewSet):
             Response -- JSON serialized list of myclubs
         """
         myclubs = MyClub.objects.all()
+        
+
 
         serializer = MyClubSerializer(
             myclubs, many=True, context={'request': request})
@@ -38,7 +41,7 @@ class MyClubView(ViewSet):
         Returns:
             Response -- JSON serialized MyClub instance
         """
-        golfer = Golfer.objects.get(user = request.auth.user)
+        my_bag = MyBag.objects.get(pk=request.data["my_bag"])
         club = Club.objects.get(pk=request.data["club"])
 
         new_myclub = MyClub()
@@ -46,7 +49,7 @@ class MyClubView(ViewSet):
         new_myclub.yardage = request.data["yardage"]
         new_myclub.loft = request.data["loft"]
         new_myclub.club_note = request.data["club_note"]
-        new_myclub.my_bag = golfer
+        new_myclub.my_bag = my_bag
         new_myclub.club = club
 
         new_myclub.save()
@@ -88,15 +91,28 @@ class MyClubView(ViewSet):
         myclub.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
-    
+
+class ClubSerializer(serializers.ModelSerializer):
+    """JSON serializer for clubs
+
+    Arguments:
+        serializers
+    """
+    class Meta:
+        model = Club
+        fields = ('id', 'name', 'image_url')
+
+
 class MyClubSerializer(serializers.ModelSerializer):
     """JSON serializer for myclubs
 
     Arguments:
         serializers
     """
+    club = ClubSerializer(many=False)
+
     class Meta:
         model = MyClub
-        fields = ('id', 'golfer', 'club', 'brand', 'yardage', 'loft', 'club_note')
+        fields = ('id', 'my_bag', 'club', 'brand', 'yardage', 'loft', 'club_note')
         depth = 1
         

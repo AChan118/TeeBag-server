@@ -16,8 +16,15 @@ class RoundView(ViewSet):
         Returns:
             Response -- JSON serialized list of rounds
         """
-        rounds = Round.objects.all()
 
+        rounds = Round.objects.all()
+        golfer = self.request.query_params.get('golfer', None)
+        if golfer is not None:
+            rounds = rounds.filter(golfer__id=golfer)
+            serializer = RoundSerializer(
+            rounds, many=True, context={'request': request})
+            return Response(serializer.data)
+            
         serializer = RoundSerializer(
             rounds, many=True, context={'request': request})
         return Response(serializer.data)

@@ -16,7 +16,13 @@ class NoteView(ViewSet):
             Response -- JSON serialized list of notes
         """
         notes = Note.objects.all()
-
+        golfer = self.request.query_params.get('golfer', None)
+        if golfer is not None:
+            notes = notes.filter(golfer__id=golfer)
+            serializer = NoteSerializer(
+            notes, many=True, context={'request': request})
+            return Response(serializer.data)
+            
         serializer = NoteSerializer(
             notes, many=True, context={'request': request})
         return Response(serializer.data)
