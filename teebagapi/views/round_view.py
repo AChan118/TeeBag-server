@@ -19,10 +19,18 @@ class RoundView(ViewSet):
 
         rounds = Round.objects.all()
         golfer = self.request.query_params.get('golfer', None)
+        recent= self.request.query_params.get('recent', None)
         if golfer is not None:
             rounds = rounds.filter(golfer__id=golfer)
+            sorted_rounds = sorted(rounds, key=lambda round: round.date, reverse=True)
             serializer = RoundSerializer(
-            rounds, many=True, context={'request': request})
+            sorted_rounds, many=True, context={'request': request})
+            return Response(serializer.data)
+        elif recent is not None:
+            rounds = rounds.filter(golfer__id=recent)
+            sorted_rounds = sorted(rounds, key=lambda round: round.date, reverse=True)
+            serializer = RoundSerializer(
+            sorted_rounds[:5], many=True, context={'request': request})
             return Response(serializer.data)
             
         serializer = RoundSerializer(
@@ -127,21 +135,4 @@ class RoundSerializer(serializers.ModelSerializer):
         model = Round
         fields = ('id', 'date', 'golfer', 'course', 'is_full_round')
         
-    # def create(self, validated_data):
-    #     """Create a new Round instance"""
-    #     holes = validated_data.pop('holes')
-    #     round = Round.objects.create(**validated_data)
-    #     for hole in holes:
-    #         Hole.objects.create(round=round, **hole)
-    #     return round
-    # def update(self, instance, validated_data):
-    #     """Handle updating a round"""
-    #     holes = validated_data.pop('holes')
-    #     instance.date = validated_data.get('date', instance.date)
-    #     instance.golfer = validated_data.get('golfer', instance.golfer)
-    #     instance.course = validated_data.get('course', instance.course)
-    #     instance.is_full_round = validated_data.get('is_full_round', instance.is_full_round)
-    #     instance.save()
-    #     for hole in holes:
-    #         Hole.objects.update(round=instance, **hole)
-    #     return instance
+  
