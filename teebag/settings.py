@@ -61,7 +61,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'https://tee-bag-app-2tsi3.ondigitalocean.app'
+    'https://tee-bag-app-2tsi3.ondigitalocean.app',
+    'https://teebag.app'
 )
 
 # UPDATE THIS
